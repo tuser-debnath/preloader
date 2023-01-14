@@ -1,0 +1,111 @@
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap");
+
+/* Basic CSS */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto Slab", serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #fff;
+  line-height: 1.5;
+}
+
+/* Hero Area Css */
+.hero-area {
+  min-height: 100vh;
+  background-image: url(images/hero-bg.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-area::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+.hero-text {
+  width: 600px;
+  text-align: center;
+  z-index: 3;
+}
+
+.hero-text h2 {
+  font-size: 40px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.hero-text p {
+  margin: 10px 0 20px 0;
+}
+
+.hero-text a {
+  text-decoration: none;
+  background-color: blue;
+  display: inline-block;
+  padding: 12px 20px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+#preloader-area {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#preloader-area::before,
+#preloader-area::after {
+  position: absolute;
+  content: "";
+  width: 50%;
+  height: 100%;
+  background-color: #111;
+  z-index: -1;
+  transition: 0.7s ease-in-out;
+}
+
+#preloader-area::before {
+  left: 0;
+}
+
+#preloader-area::after {
+  right: 0;
+}
+
+.page-loaded.spinner-border {
+  display: none;
+}
+
+#preloader-area.page-loaded::before {
+  left: -50%;
+}
+
+#preloader-area.page-loaded::after {
+  right: -50%;
+}
